@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap");
+
+:root {
+  /* Fonts */
+  --default-font: "Poppins", sans-serif;
+  /* Colors */
+  --text: #000000;
+  --background: #020401;
+  --primary-button: #5349c2;
+  --secondary-button: #091315;
+  --accent: rgb(44, 44, 202);
+  /* Font Sizes */
+  --normal-font: 1rem;
+  --title-content-font: 1.1rem;
+  --small-title-font: 1.5rem;
+  --icon-font: 2rem;
+  --large-title-font: 2.5rem;
+  --main-title-font: 3rem;
+  /* Taskbar Height */
+  --taskbar-height: 0;
+  /* Progress Bar Height */
+  --progress-bar-width: 100px;
+  /* Particle Height */
+  --particles-height: 100vh;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+::-moz-selection {
+  background: var(--accent);
+}
+
+::selection {
+  background: var(--accent);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  font-family: poppins;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: rgb(44, 44, 202);
+  font-weight: 600;
+}
+
+.disabled {
+  color: rgb(192, 192, 192);
+}
+
+a {
+  font-size: var(--normal-font);
+  color: var(--text);
+}
+
+a:hover {
+  transition: all 0.3s ease-in-out;
+  color: var(--accent);
+}
+
+#bgvid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 0.4; */
+  z-index: -100;
+  mix-blend-mode: overlay;
+  filter: sepia(100%) hue-rotate(190deg) saturate(200%);
+}
+#taskbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: sticky;
+  padding: 1rem 1rem;
+  z-index: 1000;
+  top: 0%;
+  left: 0%;
+  transition: background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.267);
+  backdrop-filter: blur(8px);
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+#logoImg {
+  width: 12rem;
+  margin-right: 10px;
+}
+
+#end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskbarList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ri-shuffle-line::before {
+  font-size: 1.2rem;
+}
+
+.taskbarWrap {
+  float: left;
+  margin: 0.1rem;
+}
+
+.taskbarLink {
+  padding: 1rem;
+  font-size: var(--normal-font);
+}
+
+.themeBtn > button,
+.themeDBtn > button {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.toggleButton {
+  display: none;
+}
+
+.menubtn::before {
+  font-size: 1.2rem;
+}
+
+#dropdown {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  text-align: right;
+  background-color: rgb(174, 116, 233);
+  right: 0;
+  width: 270px;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  height: 0;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+#dropdown.open {
+  transition: height 0.5s ease-in;
+  height: auto;
+}
+
+#dropdown.close {
+  transition: all 2s;
+  height: 0;
+}
+
+.taskbarDList {
+  width: 100%;
+}
+
+.taskbarDWrap {
+  width: 100%;
+  border-top: 2px solid var(--background);
+}
+
+.taskbarDLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+#active {
+  color: rgb(44, 44, 202);
+  text-decoration: underline;
+}
+
+#container {
+  display: flex;
+  /* background-color: rgb(173, 173, 255); */
+  /* border-radius: 0 0 0 20% / 0 0 0 50%; */
+}
+
+#cleft {
+  width: 50%;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem;
+}
+
+#cright {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#mainbtn {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: rgb(44, 44, 202);
+  width: 8rem;
+  border-radius: 1rem;
+}
+
+#pageimg {
+  width: 100%;
+  border-left: 0.4rem solid black;
+  /* border-radius: 25% 0 0 25% / 50% 0 0 50%; */
+}
+
+#maintext {
+  font-size: 3rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+#subtext {
+  padding-left: 0.5rem;
+  max-width: 30rem;
+}
+
+#mtblue {
+  color: rgb(44, 44, 202);
+}
+
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 75%;
+  }
+
+  #taskbar {
+    padding: 1rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 70%;
+  }
+
+  .taskbarList {
+    display: none;
+  }
+
+  .toggleButton {
+    display: block;
+  }
+
+  .taskbarDList {
+    display: block;
+  }
+
+  #dropdown {
+    display: flex;
+  }
+
+  #aboutContent {
+    flex-direction: column;
+  }
+
+  #knowMe {
+    width: 100%;
+  }
+
+  #mySkills {
+    width: 100%;
+  }
+
+  .projectCard {
+    flex-direction: column;
+  }
+
+  .projectsCardImg {
+    width: 100%;
+  }
+
+  .projectCardContent {
+    width: 100%;
+  }
+
+  #contactForm {
+    width: 95%;
+  }
+
+  .contactInput {
+    width: 100%;
+  }
+
+  #aboutTitleContent {
+    margin-bottom: 2rem;
+  }
+
+  #projectsTitleContent {
+    margin-bottom: 2rem;
+  }
+
+  #contactTitleContent {
+    margin-bottom: 2rem;
+  }
+
+  #alertBox{
+    max-width: 35%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 85%;
+  }
+  #cleft{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 75%;
+  }
+
+  #taskbar {
+    padding: 1rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 70%;
+  }
+
+  .taskbarList {
+    display: none;
+  }
+
+  .toggleButton {
+    display: block;
+  }
+
+  .taskbarDList {
+    display: block;
+  }
+
+  #dropdown {
+    display: flex;
+  }
+
+  #aboutContent {
+    flex-direction: column;
+  }
+
+  #knowMe {
+    width: 100%;
+  }
+
+  #mySkills {
+    width: 100%;
+  }
+
+  .projectCard {
+    flex-direction: column;
+  }
+
+  .projectsCardImg {
+    width: 100%;
+  }
+
+  .projectCardContent {
+    width: 100%;
+  }
+
+  #contactForm {
+    width: 95%;
+  }
+
+  .contactInput {
+    width: 100%;
+  }
+
+  #aboutTitleContent {
+    margin-bottom: 2rem;
+  }
+
+  #projectsTitleContent {
+    margin-bottom: 2rem;
+  }
+
+  #contactTitleContent {
+    margin-bottom: 2rem;
+  }
+
+  #alertBox{
+    max-width: 35%;
+  }
+
+  #maintext{
+    font-size: 3rem;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  #footerStart {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #footerDesc {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  #social {
+    width: 100%;
+  }
+
+  #alertBox{
+    max-width: 40%;
+  }
+
+  #maintext{
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  #dropdown {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .taskbarDLink {
+    justify-content: right;
+  }
+}
+
+@media only screen and (max-height: 350px) {
+  #chat{
+    display: none;
+  }
+}

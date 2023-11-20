@@ -1,0 +1,99 @@
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+}
+
+#myimg {
+  border-radius: 50%;
+  height: 15rem;
+  width: 15rem;
+  aspect-ratio: 1;
+  margin: 1rem;
+}
+
+#acleft,
+#acright {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+#acleft {
+  width: 25%;
+}
+
+#acright {
+  width: 60%;
+}
+
+#card {
+  border: 2px solid black;
+}
+
+#myname {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(44, 44, 202);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#mydesc {
+  margin-top: 1rem;
+  text-align: left;
+  padding: 1rem;
+}
+
+#webtitle {
+  align-self: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(44, 44, 202);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#webdesc {
+  margin-top: 1rem;
+}
+
+#card {
+  background-color: rgb(185, 185, 235);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  #container{
+    top: 10%;
+    flex-direction: column;
+    margin-top: 20rem;
+  }
+  #acleft{
+    width: 80%;
+  }
+  #acright{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #container{
+    margin-top: 25rem;
+  }
+  #acleft{
+    width: 90%;
+  }
+  #acright{
+    width: 90%;
+  }
+}
